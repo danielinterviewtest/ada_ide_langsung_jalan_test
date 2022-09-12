@@ -1,0 +1,374 @@
+{
+	"info": {
+		"_postman_id": "780ae9d8-0df7-4071-9c60-82045be91c68",
+		"name": "Ada Ide Langsung Jalan Backend Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21704078"
+	},
+	"item": [
+		{
+			"name": "Register (200) berhasil",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nama\": \"daniel kamasi\",\n    \"username\": \"danieldk01\",\n    \"password\": \"123456\",\n    \"telepon\": \"0812345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register (500) nama melebihi batas jumlah karakter",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nama\": \"daniel kamasi daniel kamasi daniel kamasi daniel kamasi daniel kamasi\",\n    \"username\": \"danieldk01dan\",\n    \"password\": \"123456\",\n    \"telepon\": \"0812345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register (500) username melebihi batas jumlah karakter",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nama\": \"daniel kamasi\",\n    \"username\": \"danieldk01danieldk01\",\n    \"password\": \"123456\",\n    \"telepon\": \"0812345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register (500) telepon melebihi batas jumlah karakter",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nama\": \"daniel kamasi\",\n    \"username\": \"danieldk01\",\n    \"password\": \"123456\",\n    \"telepon\": \"08123456789101112\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login (200) berhasil",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"danieldk01\",\n    \"password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login (200) username tidak ditemukan",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"danieldk0\",\n    \"password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login (200) password salah",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"danieldk01\",\n    \"password\": \"1234567\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Layanan (200) berhasil",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nama\": \"Cuci Kering\",\n    \"unit\": \"kg\",\n    \"harga\": 20000.90,\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjEsInVzZXIiOiJkYW5pZWxkazAxIiwiaWF0IjoxNjYyOTQ5NDk1fQ.s8Xwyi1RmLComz7UKSVwOeHYZ0b-ctGITmDfofnPGnM\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/layanan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"layanan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Layanan (401) token tidak berlaku",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nama\": \"Cuci Kering\",\n    \"unit\": \"kg\",\n    \"harga\": 20000.90,\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjEsInVzZXIiOiJkYW5pZWxkazAxIiwiaWF0IjoxNjYyOTQ5NDk1fQ.s8Xwyi1RmLComz7UKSVwOeHYZ0b-ctGITmDfofnPG\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/layanan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"layanan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Layanan (404) token tidak ada",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nama\": \"Cuci Kering\",\n    \"unit\": \"kg\",\n    \"harga\": 20000.90\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/layanan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"layanan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Layanan (500) nama melebihi batas karakter",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nama\": \"Cuci Kering cuci kering cuci kering cuci kering cuci kering\",\n    \"unit\": \"kg\",\n    \"harga\": 20000.90,\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjEsInVzZXIiOiJkYW5pZWxkazAxIiwiaWF0IjoxNjYyOTQ5NDk1fQ.s8Xwyi1RmLComz7UKSVwOeHYZ0b-ctGITmDfofnPGnM\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/layanan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"layanan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Layanan (500) unit di luar ketentuan",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nama\": \"Cuci Kering\",\n    \"unit\": \"kgg\",\n    \"harga\": 20000.90,\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjEsInVzZXIiOiJkYW5pZWxkazAxIiwiaWF0IjoxNjYyOTQ5NDk1fQ.s8Xwyi1RmLComz7UKSVwOeHYZ0b-ctGITmDfofnPGnM\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/layanan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"layanan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Layanan (500) harga bukan angka atau desimal",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nama\": \"Cuci Kering\",\n    \"unit\": \"kg\",\n    \"harga\": \"hargadisini\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjEsInVzZXIiOiJkYW5pZWxkazAxIiwiaWF0IjoxNjYyOTQ5NDk1fQ.s8Xwyi1RmLComz7UKSVwOeHYZ0b-ctGITmDfofnPGnM\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/layanan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"layanan"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
