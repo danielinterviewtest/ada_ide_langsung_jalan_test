@@ -7,6 +7,7 @@ const verifyToken = require('./verifyToken');
 const User = require('../models/User');
 const Layanan = require('../models/Layanan');
 
+//REGISTER
 router.post('/register', async (req, res) => {
   const { nama, username, password, telepon } = req.body;
   try {
@@ -14,7 +15,7 @@ router.post('/register', async (req, res) => {
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
-    //User instance
+    //User instance or validation
     const newUser = new User({
       nama,
       username,
@@ -40,6 +41,7 @@ router.post('/register', async (req, res) => {
   }
 });
 
+//LOGIN
 router.post('/login', async (req, res) => {
   const { username, password } = req.body;
 
@@ -90,11 +92,12 @@ router.post('/login', async (req, res) => {
   }
 });
 
+//LAYANAN
 router.post('/layanan', verifyToken, async (req, res) => {
   const { nama, unit, harga } = req.body;
-  console;
 
   try {
+    //Layanan instance or validation
     const newLayanan = new Layanan({
       nama,
       unit,
@@ -102,6 +105,7 @@ router.post('/layanan', verifyToken, async (req, res) => {
       User_id: req.validUser._id,
     });
 
+    //save layanan
     const layanan = await newLayanan.save();
 
     //served data
@@ -113,6 +117,7 @@ router.post('/layanan', verifyToken, async (req, res) => {
       User_id: layanan.User_id,
     };
 
+    //send response
     res.json({
       code: 200,
       status: 'success',
